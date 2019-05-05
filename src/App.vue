@@ -17,7 +17,7 @@
 			</a>
 			<a class="mui-tab-item" href="#tabbar-with-map">
 				<span class="mui-icon mui-icon-gear"></span>
-				<span class="mui-tab-label">设置</span>
+				<span class="mui-tab-label">shezhi</span>
 			</a>
 		</nav>
   </div>
