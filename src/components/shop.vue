@@ -1,6 +1,52 @@
 <!--  -->
 <template>
-<div class=''>1111</div>
+<div class='shop'>
+  <div class="itembox">
+    <img src="../../static/imgs/good/goods6_big.png" alt="">
+    <h1 class="title">戴尔DELL游匣G3烈焰版 15.6英寸英特尔酷睿i5游戏</h1>
+    <div class="infobox">
+      <p class="prs">
+        <span class="now">￥222</span>
+        <span class="old">￥333</span>
+      </p>
+      <p class="sell">
+        <span>热销</span>
+        <span>剩6件</span>
+      </p>
+      
+    </div>
+  </div>
+   <div class="itembox">
+    <img src="../../static/imgs/good/goods6_big.png" alt="">
+    <h1 class="title">名字</h1>
+    <div class="infobox">
+      <p class="prs">
+        <span class="now">222</span>
+        <span class="old">333</span>
+      </p>
+      <p class="sell">
+        <span>热销</span>
+        <span>剩6件</span>
+      </p>
+      
+    </div>
+  </div>
+   <div class="itembox">
+    <img src="../../static/imgs/good/goods6_big.png" alt="">
+    <h1 class="title">名字</h1>
+    <div class="infobox">
+      <p class="prs">
+        <span class="now">222</span>
+        <span class="old">333</span>
+      </p>
+      <p class="sell">
+        <span>热销</span>
+        <span>剩6件</span>
+      </p>
+      
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -34,5 +80,50 @@ mounted() {
 }
 </script>
 <style>
+.shop{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  justify-content: space-between;
+}
+.shop .itembox{
+  padding:2px;
+  width: 49%;
+  min-height: 250px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px #ccc;
+  margin:3px 0px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.shop .itembox img{
+  width: 100%
+}
+.title{
+  font-size: 14px
+}
+.infobox{
+ background-color: #f7f7f7;
+}
 
+.infobox p{
+  margin-bottom: 0px;
+  padding: 5px
+}
+.infobox .now{
+  color: red;
+  font-size: 15px;
+  margin-right: 10px
+}
+
+.infobox .old{
+  font-size: 13px;
+  text-decoration: line-through
+}
+.sell{
+  display: flex;
+  justify-content: space-between;
+}
 </style>
