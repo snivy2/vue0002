@@ -6,6 +6,7 @@ import shop from '../components/shop.vue'
 import cart from '../components/cart.vue'
 import mycenter from '../components/mycenter.vue'
 import goodinfo from'../components/goodinfo.vue'
+import pinglun from'../components/pinglun.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -38,6 +39,11 @@ export default new Router({
       path: '/goodinfo/:id',
       name: 'goodinfo',
       component: goodinfo
+    },
+    {
+      path: '/pinglun/:id',
+      name: 'pinglun',
+      component: pinglun
     }
   ],
 

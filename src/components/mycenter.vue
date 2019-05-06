@@ -1,6 +1,11 @@
 <!--  -->
 <template>
-<div class=''>mycenter</div>
+<div class=''>
+  <br>
+  <h1>&nbsp;&nbsp;敬请期待</h1><br>
+  <h5>&nbsp;&nbsp;&nbsp;&nbsp;有空了一定把后台和个人中心补上TAT</h5>
+  <h4>coming soon..</h4>
+</div>
 </template>
 
 <script>
@@ -34,5 +39,11 @@ mounted() {
 }
 </script>
 <style >
-
+h5{
+  font-size:18px
+}
+h4{
+  margin-top: 125%;
+  margin-left: 50%
+}
 </style>
