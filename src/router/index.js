@@ -1,15 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
+import home from '../components/home.vue'
+import shop from '../components/shop.vue'
+import cart from '../components/cart.vue'
+import mycenter from '../components/mycenter.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path:'/',
+      redirect:'/home'
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: home
+    },
+    {
+      path: '/shop',
+      name: 'shop',
+      component: shop
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
+    },
+    {
+      path: '/mycenter',
+      name: 'mycenter',
+      component: mycenter
     }
-  ]
+  ],
+
+  linkActiveClass:'mui-active'
 })
