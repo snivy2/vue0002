@@ -5,6 +5,7 @@ import home from '../components/home.vue'
 import shop from '../components/shop.vue'
 import cart from '../components/cart.vue'
 import mycenter from '../components/mycenter.vue'
+import goodinfo from'../components/goodinfo.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -32,6 +33,11 @@ export default new Router({
       path: '/mycenter',
       name: 'mycenter',
       component: mycenter
+    },
+    {
+      path: '/goodinfo/:id',
+      name: 'goodinfo',
+      component: goodinfo
     }
   ],
 

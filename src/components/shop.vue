@@ -1,49 +1,18 @@
 <!--  -->
 <template>
 <div class='shop'>
-  <div class="itembox">
-    <img src="../../static/imgs/good/goods6_big.png" alt="">
-    <h1 class="title">戴尔DELL游匣G3烈焰版 15.6英寸英特尔酷睿i5游戏</h1>
+  <div class="itembox" v-for="item in goodslist" :key="item.id" @click="goinfo(item.id)">
+    <img :src="item.imgur" alt="">
+    <h1 class="title">{{item.title}}</h1>
     <div class="infobox">
       <p class="prs">
-        <span class="now">￥222</span>
-        <span class="old">￥333</span>
+        <span class="now">￥{{item.newprs}}</span>
+        <span class="old">￥{{item.oldprs}}</span>
       </p>
       <p class="sell">
         <span>热销</span>
-        <span>剩6件</span>
+        <span>剩{{item.cont}}件</span>
       </p>
-      
-    </div>
-  </div>
-   <div class="itembox">
-    <img src="../../static/imgs/good/goods6_big.png" alt="">
-    <h1 class="title">名字</h1>
-    <div class="infobox">
-      <p class="prs">
-        <span class="now">222</span>
-        <span class="old">333</span>
-      </p>
-      <p class="sell">
-        <span>热销</span>
-        <span>剩6件</span>
-      </p>
-      
-    </div>
-  </div>
-   <div class="itembox">
-    <img src="../../static/imgs/good/goods6_big.png" alt="">
-    <h1 class="title">名字</h1>
-    <div class="infobox">
-      <p class="prs">
-        <span class="now">222</span>
-        <span class="old">333</span>
-      </p>
-      <p class="sell">
-        <span>热销</span>
-        <span>剩6件</span>
-      </p>
-      
     </div>
   </div>
 </div>
@@ -58,7 +27,74 @@ components: {},
 data() {
 //这里存放数据
 return {
-
+  pageindex:1,
+  goodslist:[
+      {
+      id:1,
+      imgur:"../../static/imgs/good/goods1_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:7888,
+      oldprs:8666,
+      cont:892,
+    },
+    {
+      id:2,
+      imgur:"../../static/imgs/good/goods2_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:3999,
+      oldprs:4677,
+      cont:896,
+    },
+    {
+      id:3,
+      imgur:"../../static/imgs/good/goods3_big.png",
+      title:"戴尔DELL游匣G3烈焰版 15.6英寸英特尔酷睿i5游戏",
+      newprs:2888,
+      oldprs:2666,
+      cont:898,
+    },
+    {
+      id:4,
+      imgur:"../../static/imgs/good/goods4_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:5888,
+      oldprs:6666,
+      cont:896,
+    },
+  
+    {
+      id:5,
+      imgur:"../../static/imgs/good/goods5_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:5888,
+      oldprs:6666,
+      cont:896,
+    },
+       {
+      id:6,
+      imgur:"../../static/imgs/good/goods6_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:5888,
+      oldprs:6666,
+      cont:896,
+    },
+       {
+      id:7,
+      imgur:"../../static/imgs/good/goods7_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:5888,
+      oldprs:6666,
+      cont:896,
+    },
+       {
+      id:8,
+      imgur:"../../static/imgs/good/goods8_big.png",
+      title:"戴尔（DELL） 灵越5570-1525S 15.6英寸8代酷睿影音轻",
+      newprs:5888,
+      oldprs:6666,
+      cont:896,
+    },
+  ]
 };
 },
 //监听属性 类似于data概念
@@ -67,7 +103,9 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
-
+  goinfo(id){
+    this.$router.push('/goodinfo/'+id)
+  }
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
