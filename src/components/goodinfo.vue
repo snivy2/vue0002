@@ -21,10 +21,10 @@
           </p>
           <div class="mui-numbox" data-numbox-min='1' data-numbox-max='9'>
 					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
-					<input id="test" class="mui-input-numbox" type="number" value="5" />
+					<input id="test" class="mui-input-numbox" type="number"  v-model="count"/>
 					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
 				  </div>
-          <button type="button" class="mui-btn mui-btn-danger">
+          <button type="button" class="mui-btn mui-btn-danger"  @click="flash()">
 	           加入购物车
 	        </button>
   			</div>
@@ -47,6 +47,14 @@
     </div>
 	</div>
 
+  <!-- 购物车动画 -->
+  <transition
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @after-enter="afterEnter">
+  <div class="ball" v-show="flag">
+  </div>
+  </transition>
 
 </div>
 </template>
@@ -61,6 +69,8 @@ data() {
 //这里存放数据
 return {
   id: this.$route.params.id,
+  flag:false,
+  count:1,
   goodin: {
 
   }
@@ -177,6 +187,32 @@ methods: {
 },
   gopinglun(id){
     this.$router.push({name:'pinglun',params:{id}});
+  },
+  flash(){
+    this.flag = !this.flag;
+    var goods = {
+      id: this.id,
+      count: this.count,
+      price: this.goodin.newprs,
+      select: true
+    }
+    // 用vuex里面的方法
+    this.$store.commit("addtocar",goods);
+  },
+  beforeEnter(el){
+     el.style.transform = "translate(0,0)";
+  },
+  enter(el, done){
+     el.offsetWidth;
+     el.style.transform = "translate(157px,332px)";
+     el.style.transition="all 1s ease"
+     done()
+  },
+  afterEnter(el){
+     this.flag=!this.flag
+  },
+  gocart(){
+
   }
 
 },
@@ -205,5 +241,15 @@ width: 100%
 }
 .goodinfo{
   margin-bottom: 70px
+}
+.ball{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color:red;
+  position: absolute;
+  z-index:1000;
+  top:505px;
+  left: 80px
 }
 </style>
