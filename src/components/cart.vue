@@ -198,7 +198,6 @@ mounted() {
   font-size: 14px
 }
 .tupian{
-  display: inline-block;
   height: 70px!important;
   width: 70px!important;
   float: left;
